@@ -15,10 +15,22 @@ body {
     padding: 20px;
 }
 
+.notice {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: absolute;
+    gap: 8px;
+    top: 10px;
+    left: 15px;
+
+}
+
 .container {
     width: 100%;
     max-width: 400px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 16px;
 }
@@ -37,12 +49,12 @@ body {
 
 .notification.error {
     background-color: #ffe5e8;
-    border: 1px solid #e8132a;
+    /* border: 1px solid #e8132a; */
 }
 
 .notification.success {
     background-color: #e5fff0;
-    border: 1px solid #02ee6a;
+    /* border: 1px solid #02ee6a; */
 }
 
 .notification-icon {
@@ -96,13 +108,9 @@ body {
     text-align: center;
 }
 
-.title {
-    font-size: 48px;
-    font-weight: bold;
-    color: #11151f;
-}
-
-.subtitle {
+.form-container h2 {
+    display: flex;
+    justify-self: start;
     font-size: 24px;
     font-weight: 500;
     margin-top: 24px;
@@ -182,11 +190,4 @@ input[type="checkbox"] {
 
 .sign-in-button:hover {
     background-color: #0b5ed7;
-}
-
-.footer {
-    margin-top: 64px;
-    text-align: center;
-    font-size: 14px;
-    color: #445275;
 }

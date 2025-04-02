@@ -1,25 +1,23 @@
-document.getElementById('signupForm').addEventListener('submit', function (e) {
+let form = document.getElementById('signupForm');
+let emailInput = document.getElementById('email');
+let usernameInput = document.getElementById('username');
+let passwordInput = document.getElementById('password');
+form.addEventListener('submit', function (e) {
     e.preventDefault();
-    // Get form values
-    const email = document.getElementById('email').value;
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    // Create user object
-    const user = {
-        email: email,
-        username: username,
-        password: password
-    };
-    // Save to localStorage
+    let email = emailInput.value;
+    let username = usernameInput.value;
+    let password = passwordInput.value;
+    let user = { email, username, password };
+    // Lưu user vào localStorage
     localStorage.setItem('trelloUser', JSON.stringify(user));
-    // Optional: Get existing users array or create new one
+    // Lấy danh sách user từ localStorage (nếu có), nếu chưa có thì tạo mảng mới
     let users = JSON.parse(localStorage.getItem('trelloUsers')) || [];
-    // Add new user to array
+    // Thêm user mới vào danh sách
     users.push(user);
-    // Save updated array back to localStorage
+    // Cập nhật danh sách user 
     localStorage.setItem('trelloUsers', JSON.stringify(users));
-    // Show success message
-    alert('Sign up successful!');
-    // Clear form
+    // Thông báo đăng ký thành công
+    alert('Đăng ký thành công!');
+    // Xóa dữ liệu trong form
     this.reset();
 });
