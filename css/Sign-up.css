@@ -72,8 +72,13 @@
        margin-top: 10px;
    }
 
-   button:hover {
+   /* button:hover {
        background-color: #0b5ed7;
+   } */
+   #password:focus {
+       outline: none;
+       border-color: #dee2e6;
+       box-shadow: none;
    }
 
    .login-link {

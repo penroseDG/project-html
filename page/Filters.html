@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Filter Dropdown</title>
+        <link rel="stylesheet" href="../css/filters.css" />
+    </head>
+    <body>
+        <div class="filter-dropdown">
+            <div class="filter-header">
+                <h3>Filter</h3>
+                <button class="close-btn">✖</button>
+            </div>
+
+            <div class="filter-section">
+                <label for="keyword">Keyword</label>
+                <input type="text" id="keyword" s
+                    placeholder="Enter a keyword..." />
+                <p class="subtext">Search cards.</p>
+            </div>
+
+            <div class="filter-section">
+                <p class="section-label">Card status</p>
+                <label><input type="checkbox" /> Marked as complete</label>
+                <label><input type="checkbox" /> Not marked as complete</label>
+            </div>
+
+            <div class="filter-section">
+                <p class="section-label">Due date</p>
+                <label><input type="checkbox" /> <span
+                        class="icon no-date">🔘</span> No dates</label>
+                <label><input type="checkbox" /> <span
+                        class="icon overdue">🛑</span> Overdue</label>
+                <label><input type="checkbox" /> <span
+                        class="icon upcoming">🕓</span> Due in the next
+                    day</label>
+            </div>
+
+            <div class="filter-section">
+                <p class="section-label">Labels</p>
+                <label><input type="radio" name="labels" /> <span
+                        class="label-box none">No labels</span></label>
+                <label><input type="checkbox" /> <span
+                        class="label-box green"></span></label>
+                <label><input type="checkbox" /> <span
+                        class="label-box yellow"></span></label>
+                <label><input type="checkbox" /> <span
+                        class="label-box orange"></span></label>
+                <label><input type="checkbox" /> Select labels</label>
+            </div>
+        </div>
+    </body>
+</html>

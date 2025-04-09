@@ -4,71 +4,68 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Trello Sign In</title>
-        <link rel="stylesheet" href="../css/Sign-in.css">
-        <script src="../js/Sign-in.js"></script>
+        <link rel="stylesheet" href="../css/sign-in.css">
     </head>
     <body>
         <div class="notice">
-            <div class="notification error" id="errorNotification">
+            <div class="notification error" id="errorNotification"
+                style="display: none">
                 <div class="notification-content">
                     <div class="notification-icon">
                         <span class="icon-error">!</span>
                     </div>
                     <div class="notification-text">
-                        <h3>Error</h3>
-                        <p>Mật khẩu không được bỏ trống</p>
-                        <p>Email không được bỏ trống</p>
+
                     </div>
                     <button class="close-button"
                         onclick="closeNotification('errorNotification')">✕</button>
                 </div>
             </div>
             <!-- Success notification -->
-            <div class="notification success" id="successNotification">
+            <div class="notification success" id="successNotification"
+                style="display: none">
                 <div class="notification-content">
                     <div class="notification-icon">
                         <span class="icon-success">✓</span>
                     </div>
                     <div class="notification-text">
-                        <p>Đăng nhập thành công</p>
+
                     </div>
                 </div>
             </div>
         </div>
-            <!-- Sign in form -->
-            <div class="container">
-                <div class="form-container">
-                    <img src="../assets/images/trello-logo.png.png" alt="">
-                    <h2 class="subtitle">Please sign in</h2>
-                    <form id="loginForm">
-                        <div class="form-group">
-                            <input type="email" id="email" name="email"
-                                placeholder="Email address" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" id="password"
-                                name="password"
-                                placeholder="Password" required>
-                        </div>
-                        <div class="form-group checkbox">
-                            <input type="checkbox" id="remember-me"
-                                name="remember-me">
-                            <label for="remember-me">Remember me</label>
-                        </div>
-                        <div class="form-group account-link">
-                            <span>Don't have an account,</span>
-                            <a href="#">click here !</a>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit"
-                                class="sign-in-button">Sign
-                                in</button>
-                        </div>
-                    </form>
-                </div>
-                <p>  © 2025 - Rikkei Education </p>
+        <!-- Sign in form -->
+        <div class="container">
+            <div class="form-container">
+                <img src="../assets/images/trello-logo.png.png" alt>
+                <h2 class="subtitle">Please sign in</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="email" id="email" name="email"
+                            placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password"
+                            placeholder="Password" required
+                            autocomplete="current-password">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="remember-me"
+                            name="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <div class="form-group account-link">
+                        <span>Don't have an account,</span>
+                        <a href="./Sign-up.html">click here !</a>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="sign-in-button">Sign
+                            in</button>
+                    </div>
+                </form>
             </div>
+            <p>© 2025 - Rikkei Education</p>
         </div>
-        <script src="script.js"></script>
+        <script src="../js/Sign-in.js"></script>
     </body>
 </html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/listevent.css">
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-left">
+                <img src="../assets/images/trello-logo-full.png.png" alt>
+            </div>
+        </div>
+        <div class="body"
+            style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <div class="sidebar">
+                <p>Your workspaces</p>
+                <div class="icon">
+                    <img src="../assets/icon/Icon.png" alt>
+                    <p>Board</p>
+                </div>
+                <div class="icon">
+                    <img src="../assets/icon/Icon (1).png" alt>
+                    <p>Starred Boards</p>
+                </div>
+                <div class="icon">
+                    <img src="../assets/icon/Icon (2).png" alt>
+                    <p>Closed Boards</p>
+                </div>
+                <hr>
+                <div
+                    style="display: flex;color: black;justify-content: space-between;">
+                    <p>Your boards </p>
+                    <img src="../assets/icon/Button - Add board.svg" alt>
+                </div>
+                <div class="list">
+                    <div class="list2">
+                        <img src="../assets/icon/Image.svg" alt>
+                        <p>Khá bảnh meow meow </p>
+                    </div>
+                    <div class="list2">
+                        <img src="../assets/icon/Image.svg" alt>
+                        <p>Vua mèn mén </p>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="overlay-bar">
+                    <div class="overlay-bar-left">
+                        <div class="title-section">
+                            <p>Tổ chức sự kiện Year-end
+                                party !</p>
+                        </div>
+                        <div class="actions-section"
+                            style>
+                            <div width="32px" height="32px"
+                                style="margin: 20px;">
+                                <img src="../assets/icon/Frame (2).png" alt>
+                            </div>
+                            <div class="button-board"
+                                style="margin-left: 20px;">
+                                <button>
+                                    <img src="../assets/icon/Frame.png" alt>
+                                    <span>Board</span>
+                                </button>
+                            </div>
+                            <div class="button-table">
+                                <img src="../assets/icon/Frame (1).svg" alt>
+                                <span>Table</span>
+                            </div>
+                            <div class="button-close">
+                                <img src="../assets/icon/Icon (9).png" alt>
+                                <span> Close this board</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <button>
+                            <img src="../assets/icon/Img - Filter cards.svg"
+                                alt>
+                            <span>Filters</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="list-box">
+                        <div class="list-header">
+                            <span>Todo</span>
+                            <div class="icons">
+                                <img src alt>
+                                <img src alt>
+                            </div>
+                        </div>
+
+                        <button class="task-card">
+                            <img class="check-icon" src alt>
+                            Thuê DJ
+                        </button>
+                        <button class="task-card">
+                            <img class="check-icon" src alt>
+                            Lên kịch bản chương trình
+                        </button>
+                        <button class="task-card">Chuẩn bị kịch</button>
+                        <button class="task-card">
+                            <img class="check-icon" src alt>
+                            Kịch bản
+                        </button>
+                        <button class="task-card">Thuê MC</button>
+
+                        <button class="add-card">
+                            <img src alt>
+                            Add a card
+                        </button>
+                    </div>
+                    <!-- IN-PROGRESS -->
+                    <div class="list-box">
+                        <div class="list-header">
+                            <span>In-progress</span>
+                            <div class="icons">
+                                <img src alt>
+                                <img src alt>
+                            </div>
+                        </div>
+
+                        <button class="add-card">
+                            <img src alt>
+                            Add a card
+                        </button>
+                    </div>
+
+                    <!-- ADD ANOTHER LIST -->
+                    <div class="list-box add-list">
+                        <button class="add-list-button">
+                            <img src alt>
+                            Add another list
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+    <script>
+        const cards = document.querySelectorAll(".task-card");
+            cards.forEach(card => {
+            card.addEventListener("click", () => {
+            card.classList.toggle("checked");
+        });
+    });
+
+    </script>
+</html>
