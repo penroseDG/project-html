@@ -13,7 +13,7 @@ function closeNotification(id) {
 // Hiển thị thông báo lỗi
 function showError(messages) {
     let textBox = errorBox.querySelector('.notification-text');
-    textBox.innerHTML = "<h3>Error</h3>" + messages.map(m => `<p>${m}</p>`).join('');
+    textBox.innerHTML = "<h3>Lỗi</h3>" + messages.map(m => `<p>${m}</p>`).join('');
     errorBox.style.display = 'block';
     successBox.style.display = 'none';
 }
@@ -46,12 +46,14 @@ form.addEventListener('submit', function (e) {
         return;
     }
 
-    let users = JSON.parse(localStorage.getItem('trelloUsers')) || [];
+    let users = JSON.parse(localStorage.getItem('users')) || [];
     let foundUser = users.find(user => user.email === email && user.password === password);
 
     if (foundUser) {
+        // Lưu lại ID người dùng để dashboard có thể lấy thông tin user đang đăng nhập
+        localStorage.setItem('currentUserId', foundUser.id);
         showSuccess('Đăng nhập thành công');
-        setTimeout(function () {
+        setTimeout(() => {
             window.location.href = '../Dashboard.html';
         }, 1000);
     } else {

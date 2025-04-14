@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="./css/dashboard.css">
+        <link rel="stylesheet" href="./css/dashboard.css" />
         <style>
-            *{
-                font-family: Roboto;
-            }
-        </style>
+      * {
+        font-family: Roboto, Arial, sans-serif;
+      }
+    </style>
     </head>
     <body>
         <div class="header">
@@ -39,7 +39,7 @@
                 </div>
                 <div class="icon">
                     <img src="./assets/icon/Icon (7).png" alt>
-                    <p>Sign Out</p>
+                    <a color="primary" href="./page/Sign-in.html"> SIGN OUT </a>
                 </div>
             </div>
             <div class="main">
@@ -53,82 +53,214 @@
                             <button>Share</button>
                             <button>Export</button>
                         </div>
-                        <button id="week"> <img
-                                src="./assets/icon/Icon (3).png" alt>
-                            This week ▼</button>
+                        <button id="week">
+                            <img src="./assets/icon/Icon (3).png" alt>
+                            This week ▼
+                        </button>
                     </div>
                 </div>
                 <div class="main-content">
                     <div class="board-section">
                         <div class="board-grid" id="workspaceBoards">
-                            <!-- <div class="board-card"
-                                style="background-image: url('./assets/images/Hello-Falcon-d51d9.webp');">
-                                <p class="board-title">Board Title 01</p>
-                                <button class="edit-btn">
-                                    <img src="./assets/icon/Frame (3).png"
-                                        alt width="15px" height="15px">
-                                    <span>Edit this board </span>
-                                </button>
+                            <div class="board-card new-board" id="openModalBtn">
+                                <button onclick="openModal()">Create new
+                                    board</button>
                             </div>
-                            <div class="board-card"
-                                style="background-image: url('./assets/images/d4285f4a-f365-420f-a835-8435836315ef-d51d9.webp');">
-                                <p class="board-title">Board Title 02</p>
-                                <button class="edit-btn">
-                                    <img src="./assets/icon/Frame (3).png"
-                                        alt width="15px" height="15px">
-                                    <span>Edit this board </span>
-                                </button>
-                            </div>
-                            <div class="board-card"
-                                style="background-image: url('./assets/images/download.jfif');">
-                                <p class="board-title">Board Title 03</p>
-                                <button class="edit-btn">
-                                    <img src="./assets/icon/Frame (3).png"
-                                        alt width="15px" height="15px">
-                                    <span>Edit this board </span>
-                                </button>
-                            </div>
-                            <div class="board-card"
-                                style="background-image: url('./assets/images/Kitty-Loki-d51d9.jpg');">
-                                <p class="board-title">Board Title 04</p>
-                                <button class="edit-btn">
-                                    <img src="./assets/icon/Frame (3).png"
-                                        alt width="15px" height="15px">
-                                    <span>Edit this board </span>
-                                </button>
-                            </div> -->
-                            <div class="board-card new-board">
-                                <button>Create new board</button>
-                            </div>
+                            <!-- Các board khác sẽ được render bởi RenderDashboard.js -->
                         </div>
                     </div>
                     <div class="starred-section">
-                        <h2><img src="./assets/icon/Icon (8).png"
-                                style="width: 16px;"> Starred Boards</h2>
+                        <h2>
+                            <img src="./assets/icon/Icon (8).png"
+                                style="width: 16px;"> Starred Boards
+                        </h2>
                         <div class="board-grid" id="starredBoards">
-                            <!-- <div class="board-card"
-                                style="background-image: url('./assets/images/Hello-Kitty-Marvel-Characters-d51d9.webp');">
-                                <p class="board-title">Important Board 01</p>
-                                <button class="edit-btn">
-                                    <img src="./assets/icon/Frame (3).png"
-                                        alt width="15px" height="15px">
-                                    <span>Edit this board </span>
-                                </button>
-                            </div>
-                            <div class="board-card"
-                                style="background-image: url('./assets/images/Captain-Adorable-d51d9.webp');">
-                                <p class="board-title">Important Board 02</p>
-                                <button class="edit-btn">
-                                    <img src="./assets/icon/Frame (3).png"
-                                        alt width="15px" height="15px">
-                                    <span>Edit this board </span>
-                                </button>
-                            </div> -->
+                            <!-- Các board starred sẽ được render bởi RenderDashboard.js -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Modal (gồm cả Create Board và Update Board) -->
+        <div id="modalsOverlay" class="modal-overlay">
+            <!-- Modal TẠO BOARD -->
+            <div class="modal" id="createBoardModal">
+                <div class="title-bar">
+                    <h2>Create Board</h2>
+                    <button class="close-btn"
+                        onclick="closeModal()">&times;</button>
+                </div>
+                <div class="section">
+                    <h3>Background</h3>
+                    <div class="background-options">
+                        <div class="bg-box">
+                            <img class="bg-image"
+                                src="./assets/images/Captain-Adorable-d51d9.webp"
+                                alt="bg1">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </div>
+
+                        <div class="bg-box">
+                            <img class="bg-image"
+                                src="./assets/images/Hello-Hawkeye-d51d9.webp"
+                                alt="bg2">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </div>
+                        <div class="bg-box">
+                            <img class="bg-image"
+                                src="./assets/images/Hello-Kitty-Marvel-Characters-d51d9.webp"
+                                alt="bg3">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </div>
+                        <div class="bg-box">
+                            <img class="bg-image"
+                                src="./assets/images/Iron-Kitty-d51d9.webp"
+                                alt="bg4">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3>Color</h3>
+                    <div class="color-options">
+                        <button class="color orange">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color purple">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color green">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color blue">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color yellow">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color pink">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                    </div>
+                </div>
+                <div class="section">
+                    <label for="create-board-title">Board title
+                        <span>*</span></label>
+                    <input type="text" id="create-board-title"
+                        class="input-text"
+                        placeholder="E.g. Shopping list for birthday...">
+                    <p class="error-msg">👋 Please provide a valid board
+                        title.</p>
+                </div>
+                <div class="actions">
+                    <button class="close" onclick="closeModal()">Close</button>
+                    <button class="create"
+                        onclick="createNewBoard()">Create</button>
+                </div>
+            </div>
+
+            <!-- Modal CẬP NHẬT BOARD -->
+            <div class="modal" id="updateBoardModal">
+                <div class="title-bar">
+                    <h2>Update Board</h2>
+                    <button class="close-btn"
+                        onclick="closeModal()">&times;</button>
+                </div>
+                <div class="section">
+                    <h3>Background</h3>
+                    <div class="background-options">
+                        <div class="bg-box">
+                            <img class="bg-image"
+                                src="./assets/images/Hello-Hawkeye-d51d9.webp"
+                                alt="bg1">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </div>
+                        <div class="bg-box">
+                            <img class="bg-image"
+                                src="./assets/images/Hello-Falcon-d51d9.webp"
+                                alt="bg2">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </div>
+                        <div class="bg-box">
+                            <img class="bg-image"
+                                src="./assets/images/Hello-Kitty-Marvel-Characters-d51d9.webp"
+                                alt="bg3">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </div>
+                        <div class="bg-box">
+                            <img class="bg-image"
+                                src="./assets/images/Kitty-Loki-d51d9.jpg"
+                                alt="bg4">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3>Color</h3>
+                    <div class="color-options">
+                        <button class="color orange">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color purple">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color green">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color blue">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color yellow">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                        <button class="color pink">
+                            <img class="check-icon"
+                                src="./assets/icon/Icon (10).png" alt>
+                        </button>
+                    </div>
+                </div>
+                <div class="section">
+                    <label for="update-board-title">Board title
+                        <span>*</span></label>
+                    <input type="text" id="update-board-title"
+                        class="input-text" placeholder="Board 01...">
+                    <p class="error-msg">👋 Please provide a valid board
+                        title.</p>
+                </div>
+                <div class="actions">
+                    <button class="close" onclick="closeModal()">Cancel</button>
+                    <button class="create" onclick="updateBoard()">Save</button>
+                    <button class="delete"
+                        onclick="deleteBoard()">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gọi các file JS riêng biệt -->
+        <script src="./js/Dashboard.js"></script>
+        <script src="./js/UpdateBoard.js"></script>
+        <script src="./js/CreateNewBoard.js"></script>
         <script src="./js/RenderDashboard.js"></script>
+        <script src="./page/ListEvent.html"></script>
     </body>
 </html>

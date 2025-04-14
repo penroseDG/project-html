@@ -1,154 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link rel="stylesheet" href="../css/listevent.css">
+        <link rel="stylesheet" href="../css/listevent.css" />
     </head>
     <body>
         <div class="header">
             <div class="header-left">
-                <img src="../assets/images/trello-logo-full.png.png" alt>
+                <img src="../assets/images/trello-logo-full.png.png"
+                    alt="Trello Logo" />
             </div>
         </div>
-        <div class="body"
-            style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+        <div class="body">
             <div class="sidebar">
                 <p>Your workspaces</p>
                 <div class="icon">
-                    <img src="../assets/icon/Icon.png" alt>
+                    <img src="../assets/icon/Icon.png" alt="Board Icon" />
                     <p>Board</p>
                 </div>
                 <div class="icon">
-                    <img src="../assets/icon/Icon (1).png" alt>
+                    <img src="../assets/icon/Icon (1).png"
+                        alt="Starred Boards Icon" />
                     <p>Starred Boards</p>
                 </div>
                 <div class="icon">
-                    <img src="../assets/icon/Icon (2).png" alt>
+                    <img src="../assets/icon/Icon (2).png"
+                        alt="Closed Boards Icon" />
                     <p>Closed Boards</p>
                 </div>
-                <hr>
+                <hr />
                 <div
-                    style="display: flex;color: black;justify-content: space-between;">
-                    <p>Your boards </p>
-                    <img src="../assets/icon/Button - Add board.svg" alt>
+                    style="display: flex; color: black; justify-content: space-between;">
+                    <p>Your boards</p>
+                    <img src="../assets/icon/Button - Add board.svg"
+                        alt="Add Board Icon" />
                 </div>
                 <div class="list">
                     <div class="list2">
-                        <img src="../assets/icon/Image.svg" alt>
-                        <p>Khá bảnh meow meow </p>
+                        <img src="../assets/images/Captain-Adorable-d51d9.webp"
+                            alt="Board Image" />
+                        <p>Khá bảnh meow meow</p>
                     </div>
                     <div class="list2">
-                        <img src="../assets/icon/Image.svg" alt>
-                        <p>Vua mèn mén </p>
+                        <img src="../assets/images/Kitty-Spider-Man-d51d9.webp"
+                            alt="Board Image" />
+                        <p>Vua mèn mén</p>
                     </div>
                 </div>
             </div>
-            <div class="main">
+
+            <main class="main">
                 <div class="overlay-bar">
                     <div class="overlay-bar-left">
                         <div class="title-section">
-                            <p>Tổ chức sự kiện Year-end
-                                party !</p>
+                            <p>Tổ chức sự kiện Year-end party!</p>
                         </div>
-                        <div class="actions-section"
-                            style>
-                            <div width="32px" height="32px"
-                                style="margin: 20px;">
-                                <img src="../assets/icon/Frame (2).png" alt>
+                        <div class="actions-section" style="margin-left: 20px;">
+                            <div style="margin: 20px;">
+                                <img src="../assets/icon/Frame (2).png"
+                                    alt="Action Icon" />
                             </div>
-                            <div class="button-board"
-                                style="margin-left: 20px;">
+                            <div class="button-board">
                                 <button>
-                                    <img src="../assets/icon/Frame.png" alt>
+                                    <img src="../assets/icon/Frame.png"
+                                        alt="Board Icon" />
                                     <span>Board</span>
                                 </button>
                             </div>
                             <div class="button-table">
-                                <img src="../assets/icon/Frame (1).svg" alt>
+                                <img src="../assets/icon/Frame (1).svg"
+                                    alt="Table Icon" />
                                 <span>Table</span>
                             </div>
                             <div class="button-close">
-                                <img src="../assets/icon/Icon (9).png" alt>
-                                <span> Close this board</span>
+                                <img src="../assets/icon/Icon (9).png"
+                                    alt="Close Board Icon" />
+                                <span>Close this board</span>
                             </div>
                         </div>
                     </div>
                     <div class="filter">
                         <button>
                             <img src="../assets/icon/Img - Filter cards.svg"
-                                alt>
+                                alt="Filter Icon" />
                             <span>Filters</span>
                         </button>
                     </div>
                 </div>
+
                 <div class="container">
-                    <div class="list-box">
+                    <!-- Todo List Box -->
+                    <div class="list-box" id="todoList">
                         <div class="list-header">
                             <span>Todo</span>
                             <div class="icons">
-                                <img src alt>
-                                <img src alt>
+                                <img src="../assets/icon/Button menu.png"
+                                    alt="Menu Icon" />
                             </div>
                         </div>
-
-                        <button class="task-card">
-                            <img class="check-icon" src alt>
-                            Thuê DJ
-                        </button>
-                        <button class="task-card">
-                            <img class="check-icon" src alt>
-                            Lên kịch bản chương trình
-                        </button>
-                        <button class="task-card">Chuẩn bị kịch</button>
-                        <button class="task-card">
-                            <img class="check-icon" src alt>
-                            Kịch bản
-                        </button>
-                        <button class="task-card">Thuê MC</button>
-
+                        <div class="task-list">
+                            <!-- Render card here -->
+                        </div>
                         <button class="add-card">
-                            <img src alt>
-                            Add a card
+                            <div
+                                style="display: flex; align-items: center; gap: 5px;">
+                                <img src="../assets/icon/Button - Add board.png"
+                                    alt="Add Card Icon" />
+                                <span>Add a card</span>
+                            </div>
+                            <img
+                                src="../assets/icon/Button - Create from template….png"
+                                alt="Template Icon"
+                                class="create-from-template-icon" />
                         </button>
+                        <div class="formAddCard">
+                            <textarea class="addCard-input"
+                                placeholder="Enter a title or paste a link"></textarea>
+                            <button class="addCard-button">Add card</button>
+                            <button class="closeCard">
+                                <img
+                                    src="../assets/icon/Button - Close popover.png"
+                                    alt="Close Icon" />
+                            </button>
+                        </div>
                     </div>
-                    <!-- IN-PROGRESS -->
-                    <div class="list-box">
+
+                    <!-- In-Progress List Box -->
+                    <div class="list-box" id="inProgressList">
                         <div class="list-header">
-                            <span>In-progress</span>
+                            <span>In-Progress</span>
                             <div class="icons">
-                                <img src alt>
-                                <img src alt>
+                                <img src="../assets/icon/Button menu.png"
+                                    alt="Menu Icon" />
                             </div>
                         </div>
-
+                        <div class="task-list">
+                            <!-- Render card  -->
+                        </div>
                         <button class="add-card">
-                            <img src alt>
-                            Add a card
+                            <div
+                                style="display: flex; align-items: center; gap: 5px;">
+                                <img src="../assets/icon/Button - Add board.png"
+                                    alt="Add Card Icon" />
+                                <span>Add a card</span>
+                            </div>
+                            <img
+                                src="../assets/icon/Button - Create from template….png"
+                                alt="Template Icon"
+                                class="create-from-template-icon" />
                         </button>
+                        <div class="formAddCard">
+                            <textarea class="addCard-input"
+                                placeholder="Enter a title or paste a link"></textarea>
+                            <button class="addCard-button">Add card</button>
+                            <button class="closeCard">
+                                <img
+                                    src="../assets/icon/Button - Close popover.png"
+                                    alt="Close Icon" />
+                            </button>
+                        </div>
                     </div>
-
-                    <!-- ADD ANOTHER LIST -->
-                    <div class="list-box add-list">
-                        <button class="add-list-button">
-                            <img src alt>
-                            Add another list
-                        </button>
-                    </div>
-
                 </div>
-            </div>
-
+            </main>
         </div>
-    </body>
-    <script>
-        const cards = document.querySelectorAll(".task-card");
-            cards.forEach(card => {
-            card.addEventListener("click", () => {
-            card.classList.toggle("checked");
-        });
-    });
 
-    </script>
+        <!-- Script -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../js/FormList.js"></script>
+        <script src="../js/RenderListBoard.js"></script>
+    </body>
 </html>

@@ -1,0 +1,283 @@
+/* ========== Khung chính của modal ========== */
+.detailModal {
+    width: 790px;
+    height: 480px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(9, 30, 66, 0.31);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+/* ========== Phần tiêu đề ========== */
+.titleDetail>div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.detailTitle>button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(98, 111, 134, 1);
+}
+
+.detailTitle>p {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 20px;
+    color: #172B4D;
+    display: flex;
+    align-items: center;
+    height: 24px;
+}
+
+/* ========== Phần "in list" và nút trạng thái ========== */
+.inlist {
+    padding-left: 30px;
+}
+
+.inlist p {
+    font-size: 14px;
+    color: #44546F;
+}
+
+.inlist>button {
+    padding: 5px 10px;
+    background-color: rgba(220, 223, 228, 1);
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.inlist>button>span {
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #44546F;
+}
+
+/* ========== Container chính ========== */
+.containerDetail {
+    display: flex;
+    gap: 20px;
+}
+
+/* ========== Bên trái: phần mô tả ========== */
+.containerLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titleContainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.titleContainer>span {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    color: #172B4D;
+}
+
+/* ========== Vùng mô tả có toolbar + textarea ========== */
+.textContainer {
+    margin-left: 30px;
+    width: 570px;
+    height: 280px;
+    border: 1px solid rgba(133, 144, 162, 1);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.toolBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 570px;
+    height: 50px;
+    border-bottom: 2px solid rgba(241, 242, 244, 1);
+}
+
+.toolBar>div>button {
+    border: none;
+    background-color: #FFFFFF;
+}
+
+.textarea textarea {
+    width: 565px;
+    height: 230px;
+    border: none;
+    outline: none;
+}
+
+/* ========== Bên phải: các nút Labels, Dates, Delete ========== */
+.containerRight {
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.containerRight>button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    width: 170px;
+    height: 32px;
+    padding-left: 10px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+}
+
+.containerRight>button>img {
+    width: 16px;
+    height: 16px;
+}
+
+.button-one,
+.button-two {
+    background-color: rgba(9, 30, 66, 0.06);
+    cursor: pointer;
+}
+
+.button-three {
+    background-color: rgba(201, 55, 44, 1);
+    color: white;
+    cursor: pointer;
+}
+
+/* ========== Nút Save / Cancel ========== */
+.action-button {
+    display: flex;
+    gap: 8px;
+    padding: 10px 30px;
+}
+
+.btn-sv {
+    cursor: pointer;
+    color: white;
+    background-color: rgba(12, 102, 228, 1);
+    width: 60px;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid rgba(12, 102, 228, 1);
+}
+
+.btn-cc {
+    border: none;
+    cursor: pointer;
+}
+
+/* ========== Các Modal phụ ==========  */
+
+/* ==========Các Modal Move card ==========*/
+
+.modalMove {
+    border: 1px solid black;
+    width: 310px;
+    height: 320px;
+}
+
+.titleMoveModal {
+    width: 310px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.titleMoveModal>p {
+    width: 69.69px;
+    height: 16.5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.042px;
+    color: #44546F;
+}
+
+.btn-closeMoveModal {
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    margin-left: 30px;
+    position: absolute;
+    right: 0;
+}
+
+.containerMoveCard {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 0;
+    gap: 10px;
+}
+
+label {
+    width: 41.13px;
+    height: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: #172B4D;
+}
+
+.inputMoveModal {
+    box-sizing: border-box;
+    height: 40px;
+    background: #FFFFFF;
+    border: 1px solid #8590A2;
+    border-radius: 3px;
+    outline: none;
+    padding-left: 8px;
+}
+
+.dropdown-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 5px;
+}
+
+select {
+    height: 40px;
+    border: 1px solid rgba(133, 144, 162, 1);
+    border-radius: 3px;
+}
+
+#list {
+    padding-left: 8px;
+    width: 200px;
+}
+
+#position {
+    width: 79px;
+    padding-left: 8px;
+}
+
+.move-btn {
+    color: #FFFFFF;
+    width: 85px;
+    height: 32px;
+    background-color: rgba(12, 102, 228, 1);
+    border: 1px solid rgba(12, 102, 228, 1);
+    border-radius: 3px;
+}

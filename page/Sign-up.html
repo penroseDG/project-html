@@ -7,6 +7,32 @@
         <link rel="stylesheet" href="/css/sign-up.css">
     </head>
     <body>
+        <div class="notice">
+            <div class="notification error" id="errorNotification"
+                style="display: none">
+                <div class="notification-content">
+                    <div class="notification-icon">
+                        <span class="icon-error">!</span>
+                    </div>
+                    <div class="notification-text">
+                    </div>
+                    <button class="close-button"
+                        onclick="closeNotification('errorNotification')">✕</button>
+                </div>
+            </div>
+            <!-- Thông báo thành công -->
+            <div class="notification success" id="successNotification"
+                style="display: none">
+                <div class="notification-content">
+                    <div class="notification-icon">
+                        <span class="icon-success">✓</span>
+                    </div>
+                    <div class="notification-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Form đăng ký -->
         <div class="container">
             <img src="../assets/images/trello-logo.png.png" alt>
             <div>
@@ -14,12 +40,9 @@
                     style="display: flex;justify-content: flex-start;opacity: 0.7;">Please
                     sign up</h2>
                 <form id="signupForm">
-                    <input type="email" id="email" placeholder="Email address"
-                        required>
-                    <input type="text" id="username" placeholder="Username"
-                        required>
-                    <input type="password" id="password" placeholder="Password"
-                        required>
+                    <input type="email" id="email" placeholder="Email address">
+                    <input type="text" id="username" placeholder="Username">
+                    <input type="password" id="password" placeholder="Password">
                     <div class="login-link">
                         <span>Already have an account, </span>
                         <a href="./Sign-in.html">click here !</a>

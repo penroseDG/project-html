@@ -99,3 +99,85 @@
        color: #6c757d;
        font-size: 14px;
    }
+
+   .notice {
+       position: absolute;
+       top: 10px;
+       left: 15px;
+       display: flex;
+       flex-direction: column;
+       gap: 8px;
+   }
+
+   /* --- Card --- */
+   .notification {
+       position: relative;
+       padding: 16px;
+       border-radius: 6px;
+   }
+
+   .notification-content {
+       display: flex;
+       align-items: flex-start;
+   }
+
+   /* --- Variants --- */
+   .notification.error {
+       background-color: #ffe5e8;
+   }
+
+   .notification.success {
+       background-color: #e5fff0;
+   }
+
+   /* --- Icon --- */
+   .notification-icon {
+       flex-shrink: 0;
+       margin-right: 12px;
+   }
+
+   .icon-error,
+   .icon-success {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+   .icon-error {
+       width: 20px;
+       height: 20px;
+       background-color: #e8132a;
+       color: #ffffff;
+       border-radius: 50%;
+       font-size: 12px;
+       font-weight: 700;
+   }
+
+   .icon-success {
+       color: #02ee6a;
+       font-size: 20px;
+   }
+
+   /* --- Text --- */
+   .notification-text {
+       flex-grow: 1;
+   }
+
+   .notification-text h3 {
+       margin-bottom: 4px;
+       font-size: 14px;
+       color: #e8132a;
+   }
+
+   .notification-text p {
+       font-size: 14px;
+   }
+
+   /* --- Close Button --- */
+   .close-button {
+       background: none;
+       border: none;
+       cursor: pointer;
+       font-size: 14px;
+       color: #212529;
+   }
