@@ -1,29 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Lấy danh sách users từ localStorage
     let storedUsers = localStorage.getItem("users");
     let storedUserId = localStorage.getItem("currentUserId");
 
-    // Kiểm tra nếu không có người dùng đang đăng nhập thì quay lại trang đăng nhập
     if (!storedUsers || !storedUserId) {
         window.location.href = "./page/Sign-in.html";
         return;
     }
 
-    // Parse dữ liệu
     window.users = JSON.parse(storedUsers);
     let currentUserId = parseInt(storedUserId, 10);
     let currentUser = window.users.find(user => user.id === currentUserId);
 
-    // Nếu không tìm thấy user => quay về trang đăng nhập
     if (!currentUser) {
         window.location.href = "./page/Sign-in.html";
         return;
     }
 
-    // Gán user hiện tại vào global nếu cần dùng ở chỗ khác
     window.currentUser = currentUser;
 
-    // Hàm render board của user hiện tại
     window.renderBoards = function () {
         let workspaceContainer = document.getElementById("workspaceBoards");
         let starredContainer = document.getElementById("starredBoards");
@@ -31,46 +25,58 @@ document.addEventListener("DOMContentLoaded", function () {
         workspaceContainer.innerHTML = "";
         starredContainer.innerHTML = "";
 
-        currentUser.boards.forEach(board => {
-            let boardDiv = document.createElement("div");
-            boardDiv.className = "board-card";
-            boardDiv.style.backgroundImage = `url('${board.backdrop || board.background}')`;
-            boardDiv.dataset.id = board.id;
-            boardDiv.style.backgroundSize = "cover";
-            boardDiv.style.backgroundPosition = "center";
-            boardDiv.style.borderRadius = "10px";
+        currentUser.boards.forEach((board, index) => {
+            const boardHTML = `
+                <div class="board-card" 
+                    data-id="${board.id}" 
+                    style="
+                        background-image: url('${board.backdrop || board.background}');
+                        background-size: cover;
+                        background-position: center;
+                        border-radius: 10px;">
+                    <p class="board-title">${board.title}</p>
+                    <button class="edit-btn">
+                        <img src="./assets/icon/Frame (3).png" alt="edit" width="15" height="15">
+                        <span>Edit this board</span>
+                    </button>
+                </div>
+            `;
 
-            let titleEl = document.createElement("p");
-            titleEl.className = "board-title";
-            titleEl.textContent = board.title;
-            boardDiv.appendChild(titleEl);
+            workspaceContainer.innerHTML += boardHTML;
 
-            boardDiv.addEventListener("click", (e) => {
+            if (board.is_starred) {
+                starredContainer.innerHTML += boardHTML;
+            }
+        });
+
+        // Tạo nút tạo board mới
+        workspaceContainer.innerHTML += `
+            <div class="board-card new-board" id="openModalBtn">
+                <button onclick="openModal()">Create new board</button>
+            </div>
+        `;
+
+        // Gắn lại sự kiện click cho từng board-card
+        let allBoards = document.querySelectorAll(".board-card");
+        allBoards.forEach((boardEl) => {
+            let boardId = boardEl.dataset.id;
+
+            boardEl.addEventListener("click", (e) => {
                 if (e.target.closest(".edit-btn")) return;
-
-                localStorage.setItem("selectedBoardId", board.id);
+                if (!boardId) return;
+                localStorage.setItem("selectedBoardId", boardId);
                 window.location.href = "../page/ListEvent.html";
             });
 
-            let editBtn = document.createElement("button");
-            editBtn.className = "edit-btn";
-            editBtn.innerHTML = `
-                <img src="./assets/icon/Frame (3).png" alt="edit" width="15" height="15">
-                <span>Edit this board</span>`;
-            boardDiv.appendChild(editBtn);
-
-            if (board.is_starred) {
-                starredContainer.appendChild(boardDiv);
-            } else {
-                workspaceContainer.appendChild(boardDiv);
+            let editBtn = boardEl.querySelector(".edit-btn");
+            if (editBtn) {
+                editBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    // Mở modal sửa board ở đây nếu muốn
+                });
             }
         });
-        // Nút tạo board mới
-        let createButtonDiv = document.createElement("div");
-        createButtonDiv.className = "board-card new-board";
-        createButtonDiv.id = "openModalBtn";
-        createButtonDiv.innerHTML = `<button onclick="openModal()">Create new board</button>`;
-        workspaceContainer.appendChild(createButtonDiv);
+
     };
 
     renderBoards();

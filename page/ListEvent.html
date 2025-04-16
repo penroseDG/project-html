@@ -3,8 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>List Event</title>
         <link rel="stylesheet" href="../css/listevent.css" />
+        <link rel="stylesheet" href="../css/detailmodal.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
     <body>
         <div class="header">
@@ -39,16 +41,7 @@
                         alt="Add Board Icon" />
                 </div>
                 <div class="list">
-                    <div class="list2">
-                        <img src="../assets/images/Captain-Adorable-d51d9.webp"
-                            alt="Board Image" />
-                        <p>Khá bảnh meow meow</p>
-                    </div>
-                    <div class="list2">
-                        <img src="../assets/images/Kitty-Spider-Man-d51d9.webp"
-                            alt="Board Image" />
-                        <p>Vua mèn mén</p>
-                    </div>
+                    <!-- Danh sách board sẽ được render bằng JS -->
                 </div>
             </div>
 
@@ -56,7 +49,7 @@
                 <div class="overlay-bar">
                     <div class="overlay-bar-left">
                         <div class="title-section">
-                            <p>Tổ chức sự kiện Year-end party!</p>
+                            <p></p> <!-- Tên board sẽ render ở đây -->
                         </div>
                         <div class="actions-section" style="margin-left: 20px;">
                             <div style="margin: 20px;">
@@ -92,7 +85,7 @@
                 </div>
 
                 <div class="container">
-                    <!-- Todo List Box -->
+                    <!-- Todo List -->
                     <div class="list-box" id="todoList">
                         <div class="list-header">
                             <span>Todo</span>
@@ -102,7 +95,7 @@
                             </div>
                         </div>
                         <div class="task-list">
-                            <!-- Render card here -->
+
                         </div>
                         <button class="add-card">
                             <div
@@ -113,22 +106,25 @@
                             </div>
                             <img
                                 src="../assets/icon/Button - Create from template….png"
-                                alt="Template Icon"
-                                class="create-from-template-icon" />
+                                class="create-from-template-icon"
+                                alt="Template Icon" />
                         </button>
-                        <div class="formAddCard">
+                        <div class="formAddCard" style="display: none;">
                             <textarea class="addCard-input"
                                 placeholder="Enter a title or paste a link"></textarea>
-                            <button class="addCard-button">Add card</button>
-                            <button class="closeCard">
-                                <img
-                                    src="../assets/icon/Button - Close popover.png"
-                                    alt="Close Icon" />
-                            </button>
+                            <div
+                                style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
+                                <button class="addCard-button">Add card</button>
+                                <button class="closeCard">
+                                    <img
+                                        src="../assets/icon/Button - Close popover.png"
+                                        alt="Close Icon" />
+                                </button>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- In-Progress List Box -->
+                    <!-- In-Progress List -->
                     <div class="list-box" id="inProgressList">
                         <div class="list-header">
                             <span>In-Progress</span>
@@ -137,9 +133,7 @@
                                     alt="Menu Icon" />
                             </div>
                         </div>
-                        <div class="task-list">
-                            <!-- Render card  -->
-                        </div>
+                        <div class="task-list"></div>
                         <button class="add-card">
                             <div
                                 style="display: flex; align-items: center; gap: 5px;">
@@ -149,27 +143,192 @@
                             </div>
                             <img
                                 src="../assets/icon/Button - Create from template….png"
-                                alt="Template Icon"
-                                class="create-from-template-icon" />
+                                class="create-from-template-icon"
+                                alt="Template Icon" />
                         </button>
-                        <div class="formAddCard">
+                        <div class="formAddCard" style="display: none;">
                             <textarea class="addCard-input"
                                 placeholder="Enter a title or paste a link"></textarea>
-                            <button class="addCard-button">Add card</button>
-                            <button class="closeCard">
-                                <img
-                                    src="../assets/icon/Button - Close popover.png"
-                                    alt="Close Icon" />
-                            </button>
+                            <div
+                                style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
+                                <button class="addCard-button">Add card</button>
+                                <button class="closeCard">
+                                    <img
+                                        src="../assets/icon/Button - Close popover.png"
+                                        alt="Close Icon" />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
-
-        <!-- Script -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <div class="detailModal">
+            <div class="titleDetail">
+                <div class="detailTitle">
+                    <button></button>
+                    <p> Kịch bản </p>
+                </div>
+                <div class="inlist">
+                    <p>in list</p>
+                    <!-- <button style="background-color: rgba(220, 223, 228, 1);">
+                        <span> IN-PROGRESS </span>
+                        <img src="../assets/icon/Frame (4).png" alt>
+                    </button> -->
+                    <select id="selectList">
+                        <option>IN-PROGESS</option>
+                        <option>TO-DO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="containerDetail">
+                <div class="containerLeft">
+                    <div class="titleContainer">
+                        <img src="../assets/icon/Frame (5).png" alt>
+                        <span>
+                            Description
+                        </span>
+                    </div>
+                    <div class="textContainer">
+                        <div class="toolBar">
+                            <div class="first">
+                                <button>
+                                    <img
+                                        src="../assets/icon/Button menu - normal Text styles.png"
+                                        alt>
+                                </button>
+                            </div>
+                            <div class="second">
+                                <button>
+                                    <img
+                                        src="../assets/icon/Button - Bold ⌘B.png"
+                                        alt>
+                                </button>
+                                <button>
+                                    <img
+                                        src="../assets/icon/Button - Italic ⌘I.png"
+                                        alt>
+                                </button>
+                                <button>
+                                    <img src="../assets/icon/Button menu.png"
+                                        alt>
+                                </button>
+                            </div>
+                            <div class="third">
+                                <button>
+                                    <img
+                                        src="../assets/icon/Button menu - Lists.png"
+                                        alt>
+                                </button>
+                            </div>
+                            <div class="four">
+                                <button>
+                                    <img
+                                        src="../assets/icon/Button dialog - Link ⌘K.png"
+                                        alt>
+                                </button>
+                                <button>
+                                    <img src="../assets/icon/Button - Image.png"
+                                        alt>
+                                </button>
+                                <button>
+                                    <img
+                                        src="../assets/icon/Button - Add board.png"
+                                        alt>
+                                </button>
+                                <button>
+                                    <img src="../assets/icon/Frame (4).png" alt>
+                                </button>
+                            </div>
+                            <div class="five">
+                                <button>
+                                    <img src="../assets/icon/Frame (6).png" alt>
+                                </button>
+                            </div>
+                            <div class="six">
+                                <button>
+                                    <img
+                                        src="../assets/icon/Button - Attach and insert link.png"
+                                        alt>
+                                </button>
+                                <button>
+                                    <img
+                                        src="../assets/icon/Button - View Markdown.png"
+                                        alt>
+                                </button>
+                                <button>
+                                    <img src="../assets/icon/Button (1).png"
+                                        alt>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="textarea">
+                            <textarea id="text"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="containerRight">
+                    <button class="button-one">
+                        <img src="../assets/icon/Frame (10).png" alt>
+                        Labels
+                    </button>
+                    <button class="button-two">
+                        <img src="../assets/icon/Frame (8).png" alt>
+                        Dates
+                    </button>
+                    <button class="button-three" id="btnDelete">
+                        <img src="../assets/icon/Frame (9).png" alt>
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <div class="action-button">
+                <button class="btn-sv">Save</button>
+                <button class="btn-cc">Cancel</button>
+            </div>
+        </div>
+        <div class="modalMove" style="display: none;">
+            <div class="titleMoveModal">
+                <p>Move card</p>
+                <button class="btn-closeMoveModal" id="closeModal">
+                    <img src="../assets/icon/Button - Close popover.png" alt>
+                </button>
+            </div>
+            <div class="containerMoveCard">
+                <p
+                    style="width: 107.04px; height: 16px; font-family: 'Roboto'; font-style: normal;font-weight: 600; font-size: 12px; line-height: 16px; display: flex; align-items: center; color: #44546F; ">
+                    Select destination
+                </p>
+                <label>Board</label>
+                <input class="inputMoveModal" type="text">
+                <div class="dropdown-group">
+                    <div style="display: flex; flex-direction: column;">
+                        <label for="list">List</label>
+                        <select id="list">
+                            <option>In-progress</option>
+                            <option>To do</option>
+                            <option>Done</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                        <label for="position">Position</label>
+                        <select id="position">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="move-btn">Move</button>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="../js/DetailModal.js"></script>
         <script src="../js/FormList.js"></script>
         <script src="../js/RenderListBoard.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>

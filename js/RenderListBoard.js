@@ -3,40 +3,41 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentUserId = parseInt(localStorage.getItem("currentUserId"), 10);
     let selectedBoardId = parseInt(localStorage.getItem("selectedBoardId"), 10);
 
-    // Tìm user đang đăng nhập
     let currentUser = users.find(user => user.id === currentUserId);
     if (!currentUser) {
         window.location.href = "./Sign-in.html";
         return;
     }
 
-    // Lấy ra board đang được chọn để hiện thông tin chính
+    // Gán tiêu đề board đang chọn
     let selectedBoard = currentUser.boards.find(b => b.id === selectedBoardId);
     if (selectedBoard) {
-        // Gán tên board lên header
         let titleSection = document.querySelector(".title-section p");
         if (titleSection) {
             titleSection.textContent = selectedBoard.title;
         }
     }
 
-    // Hiển thị danh sách board của user 
+    // Render danh sách board vào sidebar
     let boardListContainer = document.querySelector(".sidebar .list");
     boardListContainer.innerHTML = "";
 
     currentUser.boards.forEach(board => {
-        let boardItem = document.createElement("div");
-        boardItem.className = "list2";
-        boardItem.innerHTML = `
-            <img src="${board.backdrop || './assets/images/default.jpg'}" alt="Board Image">
-            <p>${board.title}</p>
+        boardListContainer.innerHTML += `
+            <div class="list2" data-id="${board.id}">
+                <img src="${board.backdrop || './assets/images/default.jpg'}" alt="Board Image">
+                <p>${board.title}</p>
+            </div>
         `;
+    });
 
-        boardItem.addEventListener("click", () => {
-            localStorage.setItem("selectedBoardId", board.id);
-            window.location.reload(); // reload trang để hiển thị board mới
+    // Gán sự kiện click sau khi render xong
+    let boardItems = boardListContainer.querySelectorAll(".list2");
+    boardItems.forEach(item => {
+        item.addEventListener("click", () => {
+            let boardId = parseInt(item.dataset.id, 10);
+            localStorage.setItem("selectedBoardId", boardId);
+            window.location.reload();
         });
-
-        boardListContainer.appendChild(boardItem);
     });
 });

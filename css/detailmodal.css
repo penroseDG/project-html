@@ -34,6 +34,26 @@
     height: 24px;
 }
 
+#selectList {
+    border: 1px solid rgba(220, 223, 228, 1);
+    outline: none;
+    color: rgba(68, 84, 111, 1);
+    background-color: rgba(220, 223, 228, 1);
+    font-family: 'Ubuntu';
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 16px;
+    width: 105px;
+    height: 16px;
+}
+
+/* #selectList>option {
+    font-family: 'Ubuntu';
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 16px;
+} */
+
 /* ========== Phần "in list" và nút trạng thái ========== */
 .inlist {
     padding-left: 30px;
@@ -280,4 +300,18 @@ select {
     background-color: rgba(12, 102, 228, 1);
     border: 1px solid rgba(12, 102, 228, 1);
     border-radius: 3px;
+}
+
+.show-detail-modal {    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
 }

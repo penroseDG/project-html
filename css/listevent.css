@@ -1,10 +1,10 @@
-/* HEADER */
+/* ========== HEADER ========== */
 .header {
     position: absolute;
     width: 100%;
     height: 48px;
-    left: 0;
     top: 0;
+    left: 0;
     background: #F8F9FA;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
     display: flex;
@@ -19,17 +19,16 @@
     align-items: center;
     padding-left: 16px;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: transparent;
 }
 
-/* BODY */
+/* ========== BODY ========== */
 .body {
     display: flex;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* SIDEBAR */
+/* ========== SIDEBAR ========== */
 .sidebar {
     position: absolute;
     top: 48px;
@@ -79,9 +78,7 @@ hr {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* BOARD LIST */
 .list {
-    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -90,58 +87,57 @@ hr {
     padding-left: 12px;
     display: flex;
     align-items: center;
-}
-
-.list2>img {
-    width: 24px;
-    height: 20px;
+    gap: 8px;
+    height: 36px;
+    cursor: pointer;
 }
 
 .list2:hover {
     border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.16);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* MAIN */
+.list2 img {
+    width: 24px;
+    height: 20px;
+}
+
+/* ========== MAIN ========== */
 .main {
     margin-left: 232px;
-    margin-top: 40px;
+    margin-top: 48px;
     width: calc(100% - 232px);
     background-color: #ffffff;
     min-height: calc(100vh - 48px);
+    display: flex;
+    flex-direction: column;
 }
 
-/* OVERLAY-BAR */
+/* ========== OVERLAY BAR ========== */
 .overlay-bar {
-    width: 100%;
     height: 60px;
+    width: 97%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(241, 242, 244, 1);
+    background-color: #f1f2f4;
+    padding: 0 16px;
 }
 
 .overlay-bar-left {
-    padding-left: 30px;
+    padding-left: 15px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
 }
 
 .title-section {
-    width: 290px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-}
-
-.title-section p {
     font-size: 18px;
-    line-height: 32px;
     font-weight: 700;
-    color: rgba(23, 43, 77, 1);
+    color: #172b4d;
 }
 
+/* ========== ACTIONS ========== */
 .actions-section {
     display: flex;
     align-items: center;
@@ -157,67 +153,62 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3px;
+    gap: 4px;
     color: #ffffff;
+    font-weight: 500;
 }
 
 .button-table,
 .button-close {
     display: flex;
     align-items: center;
-    gap: 3px;
-    height: 32px;
-    color: rgba(23, 43, 77, 1);
-    cursor: pointer;
-    font-size: 14px;
-    line-height: 32px;
-    font-weight: 500;
-}
-
-.filter {
-    padding-right: 16px;
-    width: 76px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 5px;
+    color: #172b4d;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .filter button {
     border: none;
+    background: none;
     font-size: 14px;
     font-weight: 500;
-    line-height: 32px;
-    color: rgba(23, 43, 77, 1);
+    color: #172b4d;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
 }
 
-/* CONTAINER + LISTS */
+/* ========== LIST CONTAINER ========== */
 .container {
     display: flex;
     gap: 16px;
-    margin-top: 30px;
-    margin-left: 40px;
+    padding: 24px;
     overflow-x: auto;
-    min-height: calc(100vh - 108px);
+    height: calc(100vh - 108px);
 }
 
+/* ========== LIST BOX ========== */
 .list-box {
-    width: 272px;
-    height: 350px;
-    background-color: rgba(241, 242, 244, 1);
+    flex: 0 0 272px;
+    background-color: #f1f2f4;
     border-radius: 8px;
     padding: 12px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    height: auto;
+    overflow-y: auto;
 }
 
+/* ========== LIST HEADER ========== */
 .list-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 4px;
+
 }
 
 .list-header span {
@@ -226,99 +217,98 @@ hr {
     color: #172b4d;
 }
 
-.list-header .icons img {
-    margin-left: 6px;
-}
-
 .task-list {
     display: flex;
     flex-direction: column;
 }
 
-.task-card {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 6px 10px;
-    margin-bottom: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
+/* ========== CARD ========== */
+.card-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    width: 265px;
-    height: 40px;
+    height: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
     color: #172b4d;
+    margin-bottom: 6px;
+}
+
+.card-item:hover {
     cursor: pointer;
-    transition: background 0.2s ease;
+    background-color: rgba(107, 66, 221, 0.219);
 }
 
-.task-card:hover {
-    background-color: #f1f2f4;
-}
-
-.task-card .check-icon {
-    width: 16px;
-    height: 16px;
-    display: none;
-}
-
-.task-card.checked .check-icon {
-    display: inline;
-}
-
-/* ADD CARD + FORM */
+/* ========== ADD CARD BUTTON ========== */
 .add-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 6px;
-    background-color: rgba(241, 242, 244, 1);
+    background-color: transparent;
     border: none;
-    border-radius: 6px;
-    width: 265px;
-    height: 36px;
-    font-size: 14px;
     color: #5e6c84;
+    font-size: 14px;
     cursor: pointer;
-    margin-top: auto;
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
 }
 
+.add-card:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+}
+
+/* ========== FORM ADD CARD ========== */
 .formAddCard {
     display: none;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 8px;
+    background: #f9f9f9;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .addCard-input {
     width: 100%;
-    padding: 5px;
-    height: 50px;
-    outline: none;
-    border-radius: 8px;
-    color: rgba(98, 111, 134, 1);
-    border: 1px solid rgba(255, 255, 255, 1);
+    min-height: 60px;
+    resize: vertical;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: white;
+    box-sizing: border-box;
 }
 
 .addCard-button {
-    width: 83px;
-    height: 32px;
+    width: fit-content;
+    padding: 6px 12px;
     background-color: #0079bf;
-    color: rgba(255, 255, 255, 1);
+    color: white;
+    border: none;
     border-radius: 4px;
-    border: 1px solid #0079bf;
+    font-size: 13px;
 }
 
 .closeCard {
-    background-color: rgba(241, 242, 244, 1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: transparent;
     border: none;
     width: 32px;
     height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
-/* ADD LIST */
+/* ========== ADD LIST ========== */
 .add-list {
     background-color: rgba(241, 242, 244, 0.6);
     display: flex;
@@ -327,6 +317,7 @@ hr {
     width: 256px;
     height: 36px;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .add-list-button {
@@ -347,7 +338,7 @@ hr {
     width: 256px;
     height: 100px;
     display: none;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding: 10px;
     border-radius: 6px;
 }
@@ -359,9 +350,10 @@ hr {
     outline: none;
     border: 1px solid rgba(133, 144, 162, 1);
     box-shadow: 0 0 0 1px rgba(133, 144, 162, 1);
+    padding: 0 8px;
 }
 
-/* BUTTON BASE */
+/* ========== BASE BUTTON ========== */
 button {
     cursor: pointer;
 }

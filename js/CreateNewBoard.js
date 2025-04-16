@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let colorButtons = document.querySelectorAll("#createBoardModal .color-options .color");
     colorButtons.forEach(btn => {
         btn.addEventListener("click", function () {
-            const colorClass = btn.classList[1];
+            let colorClass = btn.classList[1];
             chosenTextColor = colorMappings[colorClass] || "#ffffff";
             colorButtons.forEach(b => b.classList.remove("selected"));
             btn.classList.add("selected");

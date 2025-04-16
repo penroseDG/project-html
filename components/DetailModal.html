@@ -15,10 +15,14 @@
                 </div>
                 <div class="inlist">
                     <p>in list</p>
-                    <button style="background-color: rgba(220, 223, 228, 1);">
+                    <!-- <button style="background-color: rgba(220, 223, 228, 1);">
                         <span> IN-PROGRESS </span>
                         <img src="../assets/icon/Frame (4).png" alt>
-                    </button>
+                    </button> -->
+                    <select id="selectList">
+                        <option>IN-PROGESS</option>
+                        <option>TO-DO</option>
+                    </select>
                 </div>
             </div>
             <div class="containerDetail">
@@ -116,7 +120,7 @@
                         <img src="../assets/icon/Frame (8).png" alt>
                         Dates
                     </button>
-                    <button class="button-three">
+                    <button class="button-three" id="btnDelete">
                         <img src="../assets/icon/Frame (9).png" alt>
                         Delete
                     </button>
@@ -165,7 +169,7 @@
                 <button class="move-btn">Move</button>
             </div>
         </div>
-        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="../js/DetailModal.js"></script>
     </body>
 </html>
